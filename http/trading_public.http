@@ -1,0 +1,26 @@
+@symbol = ETHUSD
+@k = 1
+
+### POST add batch with trading data
+POST {{serviceUrl}}/api/v1/public/tradings/add_batch
+Content-Type: application/json
+
+{
+    "symbol": "{{symbol}}",
+    "values": [
+        3381.1,
+        3381.6,
+        3382.3,
+        3382.5,
+        3380.1,
+        3380.4,
+        3381.0,
+        3381.2,
+        3389.1,
+        3389.6
+    ]
+}
+
+### GET stats of trading data
+GET {{serviceUrl}}/api/v1/public/tradings/stats/{{symbol}}?k={{k}}
+Accept: application/json
